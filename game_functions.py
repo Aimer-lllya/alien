@@ -102,7 +102,7 @@ def check_fleet_edges(ai_settings, aliens):
             break
 
 def change_fleet_direction(ai_settings, aliens):
-    #外星人下移
+    #外星人下移并换方向
     for alien in aliens.sprites():
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
