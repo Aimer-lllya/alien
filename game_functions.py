@@ -58,7 +58,7 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()
                 
-def update_screen(ai_settings,screen,stats,ship,aliens,bullets,play_button):
+def update_screen(ai_settings,screen,stats,sb,ship,aliens,bullets,play_button):
     #重新绘制屏幕
     screen.fill(ai_settings.bg_color)
     #在飞船和外星人后面绘制子弹
@@ -67,6 +67,9 @@ def update_screen(ai_settings,screen,stats,ship,aliens,bullets,play_button):
     ship.blitme()
     aliens.draw(screen)
 
+    # 显示得分
+    sb.show_score()
+    
     # 如果游戏处于非活跃状态，就绘制Play按钮
     if not stats.game_active:
         play_button.draw_button()
